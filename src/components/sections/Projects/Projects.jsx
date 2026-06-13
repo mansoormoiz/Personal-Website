@@ -14,7 +14,7 @@ const projects = [
     title: ' AI-Based Market Sentiment Prediction (Team Project)',
     subtitle: 'Collaborated on a team project to train an AI model for analyzing news sentiment and predicting stock market behavior using live and simulated event data.',
     tag: 'python / scikit-learn',
-    date: '2024',
+    date: '2025',
     details: 'Built and maintained data pipelines for cleaning, structuring, and processing raw datasets Assisted in implementing and testing baseline machine learning models for performance evaluation Supported experiment tracking and validation workflows to ensure model reliability and consistency.',
   },
   {
@@ -22,7 +22,7 @@ const projects = [
     title: 'AI Automation Workflows',
     subtitle: 'Engineered early to mid-stage AI automation systems using modern tools and frameworks.',
     tag: 'N8N / python',
-    date: '2024',
+    date: '2025-Present',
     details: 'Designed and implemented automated workflows to streamline repetitive tasks and improve operational efficiency.',
   },
   {
@@ -30,7 +30,7 @@ const projects = [
     title: 'Prompt Engineering Testing & Research ',
     subtitle: 'Executed structured testing of prompt design patterns to evaluate their impact on LLM outputs.',
     tag: 'Python / AI API',
-    date: '2023',
+    date: '2025',
     details: 'Analyzed response accuracy, reasoning quality, and behavioral variations across different instruction styles Documented performance differences to identify effective prompting strategies Refined prompt structures based on observed model behavior and output consistency.',
   },
   {
@@ -38,7 +38,7 @@ const projects = [
     title: 'AI Behavior Analysis (Bias & Hallucinations)',
     subtitle: 'Investigated AI model limitations focusing on bias and hallucination tendencies using structured evaluation methods.',
     tag: 'python / AI API',
-    date: '2023',
+    date: '2025',
     details: 'Simplified the product journey with clean cards, clear cart actions, and a calm checkout path that keeps shoppers focused.',
   },
   {
@@ -46,7 +46,7 @@ const projects = [
     title: 'Graphic & Web Design Portfolio',
     subtitle: 'Produced and developed visual assets and web interfaces for personal and freelance projects.',
     tag: 'Illustrator / Figma',
-    date: '2022',
+    date: '2022-2025',
     details: 'Used Figma for UI/UX design and layout structuring. Implemented designs using HTML, CSS, and JavaScript for functional web interfaces Maintained consistent branding and design systems across all projects.',
   },
 ]
