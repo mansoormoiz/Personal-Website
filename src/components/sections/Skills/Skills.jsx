@@ -9,16 +9,16 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="px-6 py-24">
+    <section id="skills" className="px-6 py-24 scroll-reveal reveal-from-bottom reveal-delay-1">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 text-center">
-          <p className="section-subtitle">Skills</p>
-          <h2 className="section-heading mt-4 font-black text-primary">Capabilities I bring to every project</h2>
+          <p className="section-subtitle scroll-reveal reveal-from-right reveal-delay-2">Skills</p>
+          <h2 className="section-heading mt-4 font-black text-primary scroll-reveal reveal-from-right reveal-delay-3">Capabilities I bring to every project</h2>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
           {skills.map((skill) => (
-            <div key={skill.title} className="glass rounded-[2rem] p-8 border-white/20 shadow-[0_30px_80px_rgba(15,23,42,0.08)] hover:-translate-y-1 hover:border-primary/40 transition-all">
+            <div key={skill.title} className="glass rounded-[2rem] p-8 border-white/20 shadow-[0_30px_80px_rgba(15,23,42,0.08)] hover:-translate-y-1 hover:border-primary/40 transition-all scroll-reveal reveal-from-left reveal-delay-4">
               <div className="inline-flex items-center justify-center h-14 w-14 rounded-3xl bg-[#071a3c] text-white text-xl font-semibold shadow-sm">
                 {skill.title.slice(0, 1)}
               </div>

@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <section id="about" className="px-6 py-24">
+    <section id="about" className="px-6 py-24 scroll-reveal reveal-from-bottom reveal-delay-1">
       <div className="max-w-7xl mx-auto grid gap-12 lg:grid-cols-[0.95fr_1.05fr] items-center">
         <div className="space-y-8">
           <div className="inline-flex items-center gap-3 rounded-full bg-slate-100 px-4 py-2 text-sm font-medium text-slate-700">
@@ -8,8 +8,8 @@ export default function About() {
             About me
           </div>
           <div className="space-y-6">
-            <h2 className="section-heading font-black text-primary">A thoughtful developer who loves elegant interfaces.</h2>
-            <p className="text-lg leading-relaxed text-slate-600 max-w-2xl">
+            <h2 className="section-heading font-black text-primary scroll-reveal reveal-from-right reveal-delay-2">A thoughtful developer who loves elegant interfaces.</h2>
+            <p className="text-lg leading-relaxed text-slate-600 max-w-2xl scroll-reveal reveal-from-right reveal-delay-3">
               I combine interface design, performance-minded engineering, and business awareness to create web products and AI solutions that delight users and help teams move faster.
             </p>
           </div>
@@ -36,7 +36,7 @@ export default function About() {
 
         <div className="relative mx-auto w-full max-w-xl">
           <div className="absolute -top-10 left-0 w-36 h-36 rounded-full bg-primary/10 blur-3xl"></div>
-          <div className="glass relative overflow-hidden rounded-[2rem] border-white/30 shadow-[0_40px_120px_rgba(15,23,42,0.12)] p-8 floating-card">
+          <div className="glass relative overflow-hidden rounded-[2rem] border-white/30 shadow-[0_40px_120px_rgba(15,23,42,0.12)] p-8 floating-card scroll-reveal reveal-from-left reveal-delay-4">
             <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-cyan-200/30"></div>
             <div className="absolute -bottom-10 left-10 h-28 w-28 rounded-full bg-primary/10"></div>
             <div className="relative z-10 flex flex-col gap-6">

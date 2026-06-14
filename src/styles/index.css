@@ -59,30 +59,44 @@ body {
   position: fixed;
   inset: 0;
   background: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
-  z-index: 60;
+  z-index: 99999;
 }
 
 .modal-content {
-  background: rgba(255, 255, 255, 0.94);
+  position: relative;
+  z-index: 100000;
+  background: rgba(255, 255, 255, 0.98);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 28px;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   width: min(720px, 100%);
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
 }
 
 /* Smooth transitions */
 button, a {
-  transition: all 0.3s ease;
+  transition: all 1s cubic-bezier(.2,.8,.2,1);
+}
+
+.transition,
+.transition-all,
+.transition-colors,
+.transition-opacity {
+  transition-duration: 1s !important;
+  transition-timing-function: cubic-bezier(.2,.8,.2,1) !important;
 }
 
 .wave-icon {
   display: inline-block;
-  animation: wave 1.6s ease-in-out infinite;
+  animation: wave 2.4s ease-in-out infinite;
   transform-origin: 70% 70%;
   font-size: 3rem;
   line-height: 1;
@@ -111,7 +125,7 @@ button, a {
 
 .floating-card {
   /* Slightly stronger, smoother float with subtle scale */
-  animation: float 6s ease-in-out infinite;
+  animation: float 8s ease-in-out infinite;
   will-change: transform;
 }
 
@@ -129,6 +143,38 @@ button, a {
     transform: translateY(-4px) scale(1.008);
   }
 }
+
+.scroll-reveal,
+.reveal-item {
+  opacity: 0;
+  transform: translate3d(0, 56px, 0);
+  transition: opacity 900ms cubic-bezier(.22,.73,.33,1), transform 900ms cubic-bezier(.22,.73,.33,1);
+  will-change: transform, opacity;
+}
+
+.scroll-reveal.reveal-from-top,
+.reveal-item.reveal-from-top { transform: translate3d(0, -40px, 0); }
+.scroll-reveal.reveal-from-right,
+.reveal-item.reveal-from-right { transform: translate3d(60px, 0, 0); }
+.scroll-reveal.reveal-from-left,
+.reveal-item.reveal-from-left { transform: translate3d(-60px, 0, 0); }
+.scroll-reveal.reveal-from-bottom,
+.reveal-item.reveal-from-bottom { transform: translate3d(0, 60px, 0); }
+
+.scroll-reveal.reveal-visible,
+.reveal-item.reveal-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.scroll-reveal.reveal-delay-1,
+.reveal-item.reveal-delay-1 { transition-delay: 80ms; }
+.scroll-reveal.reveal-delay-2,
+.reveal-item.reveal-delay-2 { transition-delay: 160ms; }
+.scroll-reveal.reveal-delay-3,
+.reveal-item.reveal-delay-3 { transition-delay: 240ms; }
+.scroll-reveal.reveal-delay-4,
+.reveal-item.reveal-delay-4 { transition-delay: 320ms; }
 
 @media (max-width: 1024px) {
   .section-heading {
@@ -164,6 +210,52 @@ button, a {
 
   .floating-card {
     animation: none;
+  }
+}
+
+/* Entrance animations */
+.nav-slide {
+  transform: translateY(-30px);
+  opacity: 0;
+  animation: navDown 1400ms cubic-bezier(.2,.9,.2,1) forwards;
+}
+
+@keyframes navDown {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.reveal-item {
+  opacity: 0;
+  transform: translate3d(0,12px,0);
+  will-change: transform, opacity;
+  animation: enterUp 1100ms cubic-bezier(.2,.9,.2,1) forwards;
+}
+
+.reveal-item.reveal-delay-1 { animation-delay: 120ms; }
+.reveal-item.reveal-delay-2 { animation-delay: 240ms; }
+.reveal-item.reveal-delay-3 { animation-delay: 360ms; }
+.reveal-item.reveal-delay-4 { animation-delay: 480ms; }
+
+@keyframes enterUp {
+  to {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+/* Utility: apply to a section to cascade children (no JS needed) */
+.reveal > *:not(.floating-card) {
+  /* apply reveal to immediate children for a subtle cascade */
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .nav-slide, .reveal-item, .floating-card {
+    animation: none !important;
+    transition: none !important;
   }
 }
 

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const experiences = [
   {
@@ -39,17 +39,32 @@ export default function Experience() {
   const [activeId, setActiveId] = useState(null)
   const activeExperience = experiences.find((item) => item.id === activeId)
 
+  useEffect(() => {
+    if (activeExperience) {
+      document.body.style.overflow = 'hidden'
+      document.documentElement.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+      document.documentElement.style.overflow = ''
+    }
+
+    return () => {
+      document.body.style.overflow = ''
+      document.documentElement.style.overflow = ''
+    }
+  }, [activeExperience])
+
   return (
     <section id="experience" className="px-6 py-24">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 text-center">
-          <p className="section-subtitle">Experience</p>
-          <h2 className="section-heading mt-4 font-black text-primary">A history of thoughtful product work</h2>
+          <p className="section-subtitle scroll-reveal reveal-from-right reveal-delay-2">Experience</p>
+          <h2 className="section-heading mt-4 font-black text-primary scroll-reveal reveal-from-right reveal-delay-3">A history of thoughtful product work</h2>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
           {experiences.map((item) => (
-            <div key={item.id} className="glass rounded-[2rem] p-8 border-white/20 shadow-[0_30px_80px_rgba(15,23,42,0.08)] flex flex-col justify-between">
+            <div key={item.id} className="glass rounded-[2rem] p-8 border-white/20 shadow-[0_30px_80px_rgba(15,23,42,0.08)] flex flex-col justify-between scroll-reveal reveal-from-left reveal-delay-4">
               <div>
                 <p className="text-sm uppercase tracking-[0.2em] text-slate-500">{item.company}</p>
                 <h3 className="mt-4 text-2xl font-semibold text-primary">{item.role}</h3>

@@ -1,11 +1,11 @@
 export default function Contact() {
   return (
-    <section id="contact" className="px-6 py-24">
+    <section id="contact" className="px-6 py-24 scroll-reveal reveal-from-bottom reveal-delay-1">
       <div className="max-w-5xl mx-auto glass rounded-[2rem] border-white/20 p-12 shadow-[0_40px_120px_rgba(15,23,42,0.08)]">
         <div className="text-center space-y-6">
-          <p className="section-subtitle">Contact</p>
-          <h2 className="section-heading font-black text-primary">Let’s build something beautiful together.</h2>
-          <p className="text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="section-subtitle scroll-reveal reveal-from-right reveal-delay-2">Contact</p>
+          <h2 className="section-heading font-black text-primary scroll-reveal reveal-from-right reveal-delay-3">Let’s build something beautiful together.</h2>
+          <p className="text-slate-600 max-w-2xl mx-auto leading-relaxed scroll-reveal reveal-from-right reveal-delay-4">
             I’m available for freelance work, collaborations, or full-time opportunities. Send a message and I’ll respond as soon as possible.
           </p>
         </div>

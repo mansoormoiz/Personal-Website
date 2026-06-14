@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const projects = [
   {
@@ -56,6 +56,21 @@ export default function Projects() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const activeProject = projects[activeIndex]
 
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = 'hidden'
+      document.documentElement.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+      document.documentElement.style.overflow = ''
+    }
+
+    return () => {
+      document.body.style.overflow = ''
+      document.documentElement.style.overflow = ''
+    }
+  }, [isModalOpen])
+
   const handlePrevious = () => {
     setActiveIndex((current) => (current === 0 ? projects.length - 1 : current - 1))
   }
@@ -68,8 +83,8 @@ export default function Projects() {
     <section id="projects" className="px-6 py-24">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 text-center">
-          <p className="section-subtitle">Projects</p>
-          <h2 className="section-heading mt-4 font-black text-primary">One project at a time, ready to explore</h2>
+          <p className="section-subtitle scroll-reveal reveal-from-right reveal-delay-2">Projects</p>
+          <h2 className="section-heading mt-4 font-black text-primary scroll-reveal reveal-from-right reveal-delay-3">One project at a time, ready to explore</h2>
         </div>
 
         <div className="relative flex flex-col items-center gap-6">
@@ -83,7 +98,7 @@ export default function Projects() {
             </button>
 
             <div className="w-full max-w-3xl">
-              <div className="rounded-[2rem] border border-slate-200 bg-white p-10 text-slate-950 shadow-[0_35px_100px_rgba(15,23,42,0.08)]">
+              <div className="rounded-[2rem] border border-slate-200 bg-white p-10 text-slate-950 shadow-[0_35px_100px_rgba(15,23,42,0.08)] scroll-reveal reveal-from-bottom reveal-delay-4">
                 <div className="flex flex-col gap-6">
                   <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                     <div>
